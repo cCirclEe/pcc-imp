@@ -1,9 +1,11 @@
 package de.pcc.privacycrashcam;
 
+import android.hardware.Camera;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
+import android.view.SurfaceView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,11 +20,7 @@ import android.widget.Button;
 public class CameraActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private View.OnClickListener OnButtonClick = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-        }
-    };
+    private CameraView svCamera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +28,6 @@ public class CameraActivity extends AppCompatActivity
         setContentView(R.layout.activity_camera);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -49,10 +38,15 @@ public class CameraActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Button v = (Button) findViewById(R.id.button);
-        v.setOnClickListener(OnButtonClick);
+        svCamera = (CameraView) findViewById(R.id.sv_camera);
+        svCamera.acquireCamera();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        svCamera.releaseCamera();
+    }
 
     @Override
     public void onBackPressed() {
@@ -62,32 +56,6 @@ public class CameraActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
-
-    public void buttonClicked (View v) {
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.camera, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -104,4 +72,5 @@ public class CameraActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
