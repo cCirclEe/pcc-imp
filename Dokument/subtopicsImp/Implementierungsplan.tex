@@ -1,0 +1,127 @@
+\chapter{Implementierungsplan} \label{chap:Implementierungsplan}
+
+\section{Ursprünglicher Implementierungsplan}
+
+\begin{center}
+\begin{ganttchart}[
+vgrid,
+hgrid,
+title/.style={fill=teal, draw=none},
+title label font=\color{white}\bfseries,
+title left shift=.1,
+title right shift=-.1,
+title top shift=.05,
+title height=.75,
+x unit=0.25cm,
+y unit chart=0.5cm]{1}{35}
+\gantttitle{Woche}{35}\\
+% Titles
+\gantttitle{1}{7}
+\gantttitle{2}{7}
+\gantttitle{3}{7}
+\gantttitle{4}{7}
+\gantttitle{5}{7}\\
+
+%App
+\ganttbar{Layouts}{1}{7} \\
+\ganttbar{Ordnerstruktur}{4}{7} \\
+\ganttbar{Activities}{8}{14} \\
+\ganttbar{Menü}{8}{14} \\
+\ganttbar{Camera}{8}{18} \\
+\ganttbar{Fragments}{15}{21} \\
+\ganttbar{Encryption}{15}{21} \\
+\ganttbar{Ringbuffer}{15}{21} \\
+\ganttbar{ServerProxy}{15}{28} \\
+\ganttbar{Persistor}{22}{28} \\
+\ganttbar{Data/MemoryAccess}{22}{28}
+\ganttnewline[thick, black]
+
+%Webservice
+\ganttbar{Decryption}{1}{7} \\
+\ganttbar{Anonymizing}{1}{7} \\
+\ganttbar{ServerProxy}{1}{21} \\
+\ganttbar{Main/Logger/Ordner}{8}{14} \\
+\ganttbar{ProcessingManager}{8}{21} \\
+\ganttbar{Managers}{15}{21} \\
+\ganttbar{Database}{15}{28} \\
+\ganttbar{Data}{22}{28} \\
+\ganttbar{Setup Server}{29}{35}
+\ganttnewline[thick, black]
+
+%Webinterface
+\ganttbar{LoginView}{1}{7} \\
+\ganttbar{VideoView}{1}{7} \\
+\ganttbar{Login/Register}{8}{21} \\
+\ganttbar{AccountManager}{8}{21} \\
+\ganttbar{ServerProxy}{8}{21} \\
+\ganttbar{Navigator}{15}{21} \\
+\ganttbar{VideoManager}{15}{28} \\
+\ganttbar{Download}{22}{28} \\
+\ganttbar{Sonstige Views}{22}{28} \\
+\ganttbar{Setup Server}{29}{35}
+\end{ganttchart}
+\end{center}
+
+\newpage
+
+\section{Tatsächlicher Implementierungsplan}
+
+\begin{center}
+\begin{ganttchart}[
+vgrid,
+hgrid,
+title/.style={fill=teal, draw=none},
+title label font=\color{white}\bfseries,
+title left shift=.1,
+title right shift=-.1,
+title top shift=.05,
+title height=.75,
+x unit=0.25cm,
+y unit chart=0.5cm]{1}{35}
+\gantttitle{Woche}{35}\\
+% Titles
+\gantttitle{1}{7}
+\gantttitle{2}{7}
+\gantttitle{3}{7}
+\gantttitle{4}{7}
+\gantttitle{5}{7}\\
+
+%App
+\ganttbar{Layouts}{1}{7} \\
+\ganttbar{Ordnerstruktur}{4}{7} \\
+\ganttbar{Activities}{8}{14} \\
+\ganttbar{Menü}{8}{14} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Camera}{8}{14} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Fragments}{15}{24} \\
+\ganttbar{Encryption}{15}{21} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Ringbuffer}{12}{21} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{ServerProxy}{19}{28} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Persistor}{19}{28} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Data/MemoryAccess}{15}{28}
+\ganttnewline[thick, black]
+
+%Webservice
+\ganttbar{Decryption}{1}{7} \\
+\ganttbar{Anonymizing}{1}{7} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{ServerProxy}{1}{28} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Main/Logger/Ordner}{8}{18} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{ProcessingManager}{8}{14} \\
+\ganttbar{Managers}{15}{21} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Database}{12}{28} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Data}{15}{21} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Setup Server}{22}{28}
+\ganttnewline[thick, black]
+
+%Webinterface
+\ganttbar{LoginView}{1}{7} \\
+\ganttbar{VideoView}{1}{7} \\
+\ganttbar{Login/Register}{8}{21} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{AccountManager}{8}{28} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{ServerProxy}{8}{24} \\
+\ganttbar{Navigator}{15}{21} \\
+\ganttbar{VideoManager}{15}{28} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Download}{15}{21} \\
+\ganttbar{Sonstige Views}{22}{28} \\
+\ganttbar{Setup Server}{29}{35}
+\end{ganttchart}
+\end{center}
