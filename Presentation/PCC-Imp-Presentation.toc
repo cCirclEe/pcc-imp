@@ -18,28 +18,34 @@
 \defcounter {refsection}{0}\relax 
 \beamer@subsectionintoc {2}{2}{Aufgaben}{9}{0}{2}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {2}{3}{Aufgaben sammeln}{18}{0}{2}
+\beamer@subsectionintoc {2}{3}{Aufgaben sammeln}{20}{0}{2}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {2}{4}{Implementierungsplan}{19}{0}{2}
+\beamer@subsectionintoc {2}{4}{Implementierungsplan}{21}{0}{2}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {2}{5}{Projekte aufsetzen}{20}{0}{2}
+\beamer@subsectionintoc {2}{5}{Projekte aufsetzen}{22}{0}{2}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {3}{Probleme}{21}{0}{3}
+\beamer@sectionintoc {3}{Probleme}{23}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {3}{1}{Wahrsagen}{21}{0}{3}
+\beamer@subsectionintoc {3}{1}{Intro}{23}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {3}{2}{Probleme}{21}{0}{3}
+\beamer@subsectionintoc {3}{2}{Probleme und Folgen}{24}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {3}{3}{Tats\IeC {\"a}chlicher Implementierungsplan}{22}{0}{3}
+\beamer@sectionintoc {4}{Ergebnis}{48}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {3}{4}{Ergebnis}{22}{0}{3}
+\beamer@subsectionintoc {4}{1}{Tats\IeC {\"a}chlicher Implementierungsplan}{48}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {4}{Organisation}{22}{0}{4}
+\beamer@subsectionintoc {4}{2}{Code}{49}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {4}{1}{Aufgabenverteilung}{22}{0}{4}
+\beamer@subsectionintoc {4}{3}{Oberfl\IeC {\"a}che}{50}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {4}{2}{Github}{23}{0}{4}
+\beamer@subsectionintoc {4}{4}{Final}{51}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {5}{Gruppenarbeit}{24}{0}{5}
+\beamer@sectionintoc {5}{Organisation}{52}{0}{5}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {6}{Quellen}{25}{0}{6}
+\beamer@subsectionintoc {5}{1}{Aufgabenverteilung}{52}{0}{5}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {5}{2}{Github}{53}{0}{5}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {6}{Gruppenarbeit}{54}{0}{6}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {7}{Quellen}{55}{0}{7}
