@@ -1,0 +1,167 @@
+\chapter{Implementierungsplan} \label{chap:Implementierungsplan}
+
+\section{Einleitung}
+Um eine schnelle und reibungslose Implementierung zu garantieren haben wir einen Plan erstellt, in dem wir festhalten, welches Modul wann implementiert wird. \par
+Bei der Erstellung des Plans war unser zentrales Ziel eine hierarchische Implementierung zu erreichen. Das heißt, dass zunächst die Grundfunktionalität implementiert wird und danach schrittweise weitere, immer weniger essentielle Komponenten hinzugefügt werden. Dadurch wird gewährleistet, dass Probleme, die die Umsetzung der \textit{PrivacyCrashCam} als Ganzes gefährden frühzeitig erkannt und behandelt werden können.\par
+
+\newpage
+
+\section{Ursprünglicher Implementierungsplan}
+
+\begin{center}
+\begin{ganttchart}[
+vgrid,
+hgrid,
+title/.style={fill=teal, draw=none},
+title label font=\color{white}\bfseries,
+title left shift=.1,
+title right shift=-.1,
+title top shift=.05,
+title height=.75,
+x unit=0.25cm,
+y unit chart=0.5cm]{1}{35}
+\gantttitle{Woche}{35}\\
+% Titles
+\gantttitle{1}{7}
+\gantttitle{2}{7}
+\gantttitle{3}{7}
+\gantttitle{4}{7}
+\gantttitle{5}{7}\\
+
+%App
+\ganttbar{Layouts}{1}{7} \\
+\ganttbar{Ordnerstruktur}{4}{7} \\
+\ganttbar{Activities}{8}{14} \\
+\ganttbar{Menü}{8}{14} \\
+\ganttbar{Camera}{8}{18} \\
+\ganttbar{Fragments}{15}{21} \\
+\ganttbar{Encryption}{15}{21} \\
+\ganttbar{Ringbuffer}{15}{21} \\
+\ganttbar{ServerProxy}{15}{28} \\
+\ganttbar{Persistor}{22}{28} \\
+\ganttbar{Data/MemoryAccess}{22}{28}
+\ganttnewline[thick, black]
+
+%Webservice
+\ganttbar{Decryption}{1}{7} \\
+\ganttbar{Anonymizing}{1}{7} \\
+\ganttbar{ServerProxy}{1}{21} \\
+\ganttbar{Main/Logger/Ordner}{8}{14} \\
+\ganttbar{ProcessingManager}{8}{21} \\
+\ganttbar{Managers}{15}{21} \\
+\ganttbar{Database}{15}{28} \\
+\ganttbar{Data}{22}{28} \\
+\ganttbar{Setup Server}{29}{35}
+\ganttnewline[thick, black]
+
+%Webinterface
+\ganttbar{LoginView}{1}{7} \\
+\ganttbar{VideoView}{1}{7} \\
+\ganttbar{Login/Register}{8}{21} \\
+\ganttbar{AccountManager}{8}{21} \\
+\ganttbar{ServerProxy}{8}{21} \\
+\ganttbar{Navigator}{15}{21} \\
+\ganttbar{VideoManager}{15}{28} \\
+\ganttbar{Download}{22}{28} \\
+\ganttbar{Sonstige Views}{22}{28} \\
+\ganttbar{Setup Server}{29}{35}
+\end{ganttchart}
+\end{center}
+
+\newpage
+
+\section{Tatsächlicher Implementierungsplan}
+
+\begin{center}
+\begin{ganttchart}[
+vgrid,
+hgrid,
+title/.style={fill=teal, draw=none},
+title label font=\color{white}\bfseries,
+title left shift=.1,
+title right shift=-.1,
+title top shift=.05,
+title height=.75,
+x unit=0.25cm,
+y unit chart=0.5cm]{1}{35}
+\gantttitle{Woche}{35}\\
+% Titles
+\gantttitle{1}{7}
+\gantttitle{2}{7}
+\gantttitle{3}{7}
+\gantttitle{4}{7}
+\gantttitle{5}{7}\\
+
+%App
+\ganttbar{Layouts}{1}{7} \\
+\ganttbar{Ordnerstruktur}{4}{7} \\
+\ganttbar{Activities}{8}{14} \\
+\ganttbar{Menü}{8}{14} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Camera}{8}{14} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Fragments}{15}{24} \\
+\ganttbar{Encryption}{15}{21} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Ringbuffer}{12}{21} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{ServerProxy}{19}{28} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Persistor}{19}{28} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Data/MemoryAccess}{15}{28}
+\ganttnewline[thick, black]
+
+%Webservice
+\ganttbar{Decryption}{1}{7} \\
+\ganttbar{Anonymizing}{1}{7} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{ServerProxy}{1}{28} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Main/Logger/Ordner}{8}{18} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{ProcessingManager}{8}{14} \\
+\ganttbar{Managers}{15}{21} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Database}{12}{28} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Data}{15}{21} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Setup Server}{22}{28}
+\ganttnewline[thick, black]
+
+%Webinterface
+\ganttbar{LoginView}{1}{7} \\
+\ganttbar{VideoView}{1}{7} \\
+\ganttbar{Login/Register}{8}{21} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{AccountManager}{8}{28} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{ServerProxy}{8}{24} \\
+\ganttbar{Navigator}{15}{21} \\
+\ganttbar{VideoManager}{15}{28} \\
+\ganttbar[bar/.append style={fill=mintgreen!50}]{Download}{15}{28} \\
+\ganttbar{Sonstige Views}{22}{28} \\
+\ganttbar{Setup Server}{29}{35}
+\end{ganttchart}
+\end{center}
+
+\newpage
+
+\section{Gründe für die Unterschiede} \label{sec:PlanDiff}
+\begin{itemize}
+
+\item \textbf{Ringbuffer/Persistor} \hfill \\
+Durch bereits genannte Probleme mit der Umsetzung des Ringbuffers \eqref{Ringbuffer} hat sich die Fertigstellung verzögert. Da der Persistor von den Daten des Ringbuffers abhängt, hat auch er sich verzögert.
+
+\item \textbf{Data/Memory Access} \hfill \\
+Nicht alle Methoden des MemoryAccess-Moduls wurden direkt benötigt. Daher haben wir die Fertigstellung des Moduls verzögert, um zuerst den Persistor fertig stellen zu können.
+
+\item \label{ServerProxy} \textbf{ServerProxy} \hfill \\
+Da nach und nach die Funktionalität des Web-Interfaces und der App erweitert wurden, stellten sich auch immer wieder neue kleine Probleme mit dem ServerProxy heraus, wodurch immer wieder kleine Änderungen nötig wurden und die Fertigstellung verzögerten.
+
+\item \textbf{Database} \hfill \\
+Weil die Implementierung des Passwordhashens eine Anpassung des DatabaseManagers erforderte, musste der eigentlich abgeschlossene Manager noch einmal aufgegriffen werden.
+
+\item \textbf{ServerProxy/AccountManager (Interface)}
+Da der der ServerProxy des Interfaces mit dem ServerProxy des Web-Dienstes abgeglichen werden musste \eqref{ServerProxy} hat sich die Fertigstellung des AccountManagers ebenfalls herausgezögert.
+
+\item \textbf{Download} \hfill \\
+Wie bereits erläutert erwies sich der Video-Download des Web-Interface als problematisch \eqref{sec:Download}. Infolge dessen wurde auch hier ein Mehraufwand nötig.
+
+\item \textbf{Beschleunigungen} \hfill \\
+Durch die Vorarbeit in der Entwurfsphase konnten einige Module schneller abgeschlossen werden als zunächst vermutet. Einzelne Funktionen waren bereits geschrieben und getestet und mussten daher nur noch eingefügt werden. Außerdem hatten wir uns schon vor der Implementierung mit den Technologien auseinandergesetzt, was den Implementierungsprozess beschleunigte.
+\begin{itemize}
+\itemsep0pt
+\item Camera-Modul App
+\item VideoProcessingManager Web-Dienst
+\item Server Setup Web-Dienst
+\item Data-Modul Web-Dienst
+\end{itemize}
+\end{itemize}
