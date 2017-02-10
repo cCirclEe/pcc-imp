@@ -10,7 +10,7 @@ Die Methode encrypt() von Encrpytor nimmt nun die Parameter encrypt(File[ ] inpu
 Der InputStream ist nötig, da Android nur Klassen mit zugriff auf den Context erlaubt Resourcen zu laden. Dies wirkt sich auch auf IKeyEncryptor aus.
 
 \subsection{Ringbuffer} \label{Ringbuffer}
-Uns war von Beginn an klar, dass der Ringbuffer der App, der die Video-Aufzeichnungen der App vor der Persistierung puffert eine Herausforderung werden würde. Daher haben wir uns bereits in der Entwurfsphase intensiv mit der Umsetzung auseinander gesetzt und uns dafür entschieden kurze Video-Stücke in einer Warteschlange zu speichern und diese beim Persistieren zusammenzufügen. \par  
+Uns war von Beginn an klar, dass der Ringbuffer der App, der die Video-Aufzeichnungen der App vor der Persistierung puffert, eine Herausforderung werden würde. Daher haben wir uns bereits in der Entwurfsphase intensiv mit der Umsetzung auseinander gesetzt und uns dafür entschieden kurze Video-Stücke in einer Warteschlange zu speichern und diese beim Persistieren zusammenzufügen. \par  
 Bei der Implementierung stießen wir auf das Problem, dass der MediaRecorder, der die Video-Stücke aufnimmt, asynchron zum Schreiben des Videos Rückmeldung gibt, er hätte die Aufnahme beendet. Dennoch waren die Video-Files zu dem Zeitpunkt nicht immer vollständig geschrieben, sodass wir einen Mechanismus entwickeln mussten, um sicherzustellen, dass die Files fertig geschrieben werden, bevor wir versuchen zu persistieren. 
 Unser erster Versuch war einen Android-FileObserver auf die Files zu setzen und dadurch Rückmeldung zu erhalten, wenn die Files fertig geschrieben sind und beim Abrufen der Daten zu warten, bis dies für alle Files in der Warteschlange gilt. Es wurden jedoch nicht alle Events empfangen, da manche Dateien bereits vor dem Einfügen in die Warteschlange fertig waren. Die Funktion getData() wurde in demandData() umbenannt um klarzustellen, dass eventuell Wartezeit auftreten kann.  \par  
 Dieses Problem konnten wir schließlich lösen, indem wir den FileObserver auf dem Ordner mit den Videos setzten anstatt auf die Videos selbst.  \par  
@@ -48,7 +48,7 @@ Der LocationConfig mussten weitere Locations für Resources-Ordner hinzugefügt 
 Da wir uns entschieden haben einen eigenen Ordner für log-Files zu erstellen wurde auch dieser hinzugefügt.
 
 \subsection{VideoProcessingChain}
-Um es bei der Fehlerbehandlung zu ermöglichen einzelne Chains aufzuräumen wurde eine Funktion cleanUp() hinzugefügt. Diese dupliziert zur Zeit die Funktionalität von deleteTmpFiles(), ist aber nützlich falls man die Fehlerbehandlung erweitern möchte. \par 
+Um es bei der Fehlerbehandlung zu ermöglichen einzelne Chains aufzuräumen, wurde eine Funktion cleanUp() hinzugefügt. Diese dupliziert zur Zeit die Funktionalität von deleteTmpFiles(), ist aber nützlich falls man die Fehlerbehandlung erweitern möchte. \par 
 Es wurden getter für response und videoName hinzugefügt.
 
 \section{Interface}
