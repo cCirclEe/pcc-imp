@@ -1,18 +1,59 @@
 \chapter{Änderungen} \label{chap:Aenderungen}
-\section{Zum Pflichtenheft}
 
-\subsection{App}
+\section{App}
 
-\subsection{Web-Dienst}
+\subsection{AsyncPersistor}
+Dem Konstruktor muss zusätzlich der Context übergeben werden, damit das Public Key File für das Encryption-Modul geladen werden kann.
 
-\subsection{Web-Interface}
+\subsection{Encryptor}
+Die Methode encrypt() von Encrpytor nimmt nun die Parameter encrypt(File[ ] input, File[ ] output, InputStream publicKey, File encKey). Da nun File Arrays übergeben werden wird erlaubt eine beliebige Anzahl Files mit einem einzigen SecretKey zu verschlüsseln und dadurch eine bessere Erweiterbarkeit erreicht. \par   
+Der InputStream ist nötig, da Android nur Klassen mit zugriff auf den Context erlaubt Resourcen zu laden. Dies wirkt sich auch auf IKeyEncryptor aus.
 
+\subsection{Ringbuffer} \label{Ringbuffer}
+Uns war von Beginn an klar, dass der Ringbuffer der App, der die Video-Aufzeichnungen der App vor der Persistierung puffert eine Herausforderung werden würde. Daher haben wir uns bereits in der Entwurfsphase intensiv mit der Umsetzung auseinander gesetzt und uns dafür entschieden kurze Video-Stücke in einer Warteschlange zu speichern und diese beim Persistieren zusammenzufügen. \par  
+Bei der Implementierung stießen wir auf das Problem, dass der MediaRecorder, der die Video-Stücke aufnimmt, asynchron zum Schreiben des Videos Rückmeldung gibt, er hätte die Aufnahme beendet. Dennoch waren die Video-Files zu dem Zeitpunkt nicht immer vollständig geschrieben, sodass wir einen Mechanismus entwickeln mussten, um sicherzustellen, dass die Files fertig geschrieben werden, bevor wir versuchen zu persistieren. 
+Unser erster Versuch war einen Android-FileObserver auf die Files zu setzen und dadurch Rückmeldung zu erhalten, wenn die Files fertig geschrieben sind und beim Abrufen der Daten zu warten, bis dies für alle Files in der Warteschlange gilt. Es wurden jedoch nicht alle Events empfangen, da manche Dateien bereits vor dem Einfügen in die Warteschlange fertig waren. Die Funktion getData() wurde in demandData() umbenannt um klarzustellen, dass eventuell Wartezeit auftreten kann.  \par  
+Dieses Problem konnten wir schließlich lösen, indem wir den FileObserver auf dem Ordner mit den Videos setzten anstatt auf die Videos selbst.  \par  
 
-\section{Zum Entwurf}
+Um die Implementierung zu erleichtern, entschieden wir uns zudem den Ringbuffer nicht mehr generisch zu Implementieren und haben ihn infolge dessen zu VideoRingBuffer umbenannt.  \par  
 
-\subsection{App}
+Für eine erweiterte Funktionalität wurden die Methoden flushAll() und den Inhalt des Puffers zu leeren und destroy() zum Löschen des Puffers hinzugefügt.
 
-\subsection{Web-Dienst}
+\section{Web-Dienst}
 
-\subsection{Web-Interface}
+\subsection{ServerProxy}
+Der upload()-Methode wurde ein weiterer Parameter hinzugefügt um Informationen über den Video-Namen weitergeben zu können.  \par  
 
+getVideosByAccount() wurde zu getVideos() umbenannt, da der Parameter accountData den Suffix redundant macht.
+
+\subsection{Main}
+Es wurde eine Funktion restartServer() hinzugefügt, falls man zusätzliche Logik einfügen möchte, die nicht der startServer() und stopServer() Routine entspricht (z.B. zum schnelleren Start bei täglichen Neustarts).
+
+\subsection{AccountManager}
+Die Methoden setMail() und setPassword() wurden zu changeAccount() zusammengefasst, um die Schnittstelle zu vereinfachen.  \par  
+
+Damit der man der Account Klasse das Salt zum hashen mitgeben kann wurde die Funktion getSalt() hinzugefügt, die das Salt des Accounts aus der Datenbank abfragt.
+
+\subsection{VideoManager} \label{sec:VideoManager}
+Da Web-Dienst und Web-Interface zwei vollständig unabhängige Projekte sind ist eine Kommunikation über die Datencontainerklasse VideoInfo nicht direkt möglich. Um dennoch Informationen austauschen zu können wurde die Methode getVideoInfoList() so abgeändert, dass sie nun einen JSON-String erstellt, der versendet und auf dem Interface wieder ausgelesen werden kann.
+
+\subsection{Account}
+Das lesen des Hash-Salt aus der Datenbank wird vom AccountManager geregelt, da die Account Klasse keinen Zugriff auf die Datenbank hat. Daher war es notwendig die Methode hashPassword() öffentlich zu machen.
+
+\subsection{Metadata}
+Die Typen von date (String -> long) und von gForce (Vector3D -> float[]) wurden angepasst und dem Pendant der App zu entsprechen.
+
+\subsection{LocationConfig}
+Der LocationConfig mussten weitere Locations für Resources-Ordner hinzugefügt werden, falls man die Ordnerstruktur verändern möchte. \par
+Da wir uns entschieden haben einen eigenen Ordner für log-Files zu erstellen wurde auch dieser hinzugefügt.
+
+\subsection{VideoProcessingChain}
+Um es bei der Fehlerbehandlung zu ermöglichen einzelne Chains aufzuräumen wurde eine Funktion cleanUp() hinzugefügt. Diese dupliziert zur Zeit die Funktionalität von deleteTmpFiles(), ist aber nützlich falls man die Fehlerbehandlung erweitern möchte. \par 
+Es wurden getter für response und videoName hinzugefügt.
+
+\section{Interface}
+
+\subsection{Account}
+Da wie bei dem \nameref{sec:VideoManager} keine Datenobjekte zwischen Interface und Dienst ausgetauscht werden können, wird auch hier nun ein JSON-String erstellt. Dafür wurde die Methode getAsJson() eingeführt.
+
+\subsection{Download} \label{sec:Download}
