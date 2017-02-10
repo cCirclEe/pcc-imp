@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.5.13)  10 FEB 2017 19:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.5.13)  10 FEB 2017 19:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2930,28 +2930,28 @@ File: resources/GithubApp.jpg Graphic file (type jpg)
 
 <use resources/GithubApp.jpg>
 Package pdftex.def Info: resources/GithubApp.jpg used on input line 344.
-(pdftex.def)             Requested size: 111.90074pt x 69.33104pt.
+(pdftex.def)             Requested size: 149.20479pt x 92.44373pt.
 
 <resources/GithubService.jpg, id=3024, 750.55406pt x 457.71pt>
 File: resources/GithubService.jpg Graphic file (type jpg)
 
 <use resources/GithubService.jpg>
 Package pdftex.def Info: resources/GithubService.jpg used on input line 344.
-(pdftex.def)             Requested size: 112.57825pt x 68.65353pt.
+(pdftex.def)             Requested size: 150.10815pt x 91.54037pt.
 
 <resources/GithubInterface.jpg, id=3025, 750.55406pt x 457.71pt>
 File: resources/GithubInterface.jpg Graphic file (type jpg)
 
 <use resources/GithubInterface.jpg>
 Package pdftex.def Info: resources/GithubInterface.jpg used on input line 344.
-(pdftex.def)             Requested size: 112.57825pt x 68.65353pt.
+(pdftex.def)             Requested size: 150.10815pt x 91.54037pt.
 
 <resources/GithubImp.jpg, id=3026, 743.77875pt x 459.21562pt>
 File: resources/GithubImp.jpg Graphic file (type jpg)
 
 <use resources/GithubImp.jpg>
 Package pdftex.def Info: resources/GithubImp.jpg used on input line 344.
-(pdftex.def)             Requested size: 111.562pt x 68.87936pt.
+(pdftex.def)             Requested size: 148.75311pt x 91.84149pt.
 Package epstopdf Info: Source file: <logos/kitlogo_de_rgb.eps>
 (epstopdf)                    date: 2017-01-10 15:00:51
 (epstopdf)                    size: 30758 bytes
@@ -3059,7 +3059,7 @@ ive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2015/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/
 public/cm-super/sftt1095.pfb><c:/texlive/2015/texmf-dist/fonts/type1/urw/helvet
 ic/uhvb8a.pfb><c:/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on PCC-Imp-Presentation.pdf (58 pages, 2555232 bytes).
+Output written on PCC-Imp-Presentation.pdf (58 pages, 2592381 bytes).
 PDF statistics:
  3244 PDF objects out of 3580 (max. 8388607)
  3096 compressed objects within 31 object streams
