@@ -1,7 +1,7 @@
 \chapter{Implementierungsplan} \label{chap:Implementierungsplan}
 
 \section{Einleitung}
-Um eine schnelle und reibungslose Implementierung zu garantieren haben wir einen Plan erstellt, in dem wir festhalten welches Modul wann implementiert wird. \par
+Um eine schnelle und reibungslose Implementierung zu garantieren haben wir einen Plan erstellt, in dem wir festhalten, welches Modul wann implementiert wird. \par
 Bei der Erstellung des Plans war unser zentrales Ziel eine hierarchische Implementierung zu erreichen. Das heißt, dass zunächst die Grundfunktionalität implementiert wird und danach schrittweise weitere, immer weniger essentielle Komponenten hinzugefügt werden. Dadurch wird gewährleistet, dass Probleme, die die Umsetzung der \textit{PrivacyCrashCam} als Ganzes gefährden frühzeitig erkannt und behandelt werden können.\par
 
 \newpage
@@ -138,10 +138,10 @@ y unit chart=0.5cm]{1}{35}
 \begin{itemize}
 
 \item \textbf{Ringbuffer/Persistor} \hfill \\
-Durch bereits genannten Probleme mit der Umsetzung des Ringbuffers \eqref{Ringbuffer} hat sich die Fertigstellung verzögert. Da der Persistor von den Daten des Ringbuffers abhängt hat auch er sich verzögert.
+Durch bereits genannte Probleme mit der Umsetzung des Ringbuffers \eqref{Ringbuffer} hat sich die Fertigstellung verzögert. Da der Persistor von den Daten des Ringbuffers abhängt, hat auch er sich verzögert.
 
 \item \textbf{Data/Memory Access} \hfill \\
-Nicht alle Methoden des MemoryAccess-Moduls wurden direkt benötigt. Daher haben wir die Fertigstellung des Moduls verzögert um zuerst den Persistor fertig stellen zu können.
+Nicht alle Methoden des MemoryAccess-Moduls wurden direkt benötigt. Daher haben wir die Fertigstellung des Moduls verzögert, um zuerst den Persistor fertig stellen zu können.
 
 \item \label{ServerProxy} \textbf{ServerProxy} \hfill \\
 Da nach und nach die Funktionalität des Web-Interfaces und der App erweitert wurden, stellten sich auch immer wieder neue kleine Probleme mit dem ServerProxy heraus, wodurch immer wieder kleine Änderungen nötig wurden und die Fertigstellung verzögerten.
