@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.5.13)  14 FEB 2017 17:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.5.13)  15 FEB 2017 11:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1653,7 +1653,7 @@ onverted-to.pdf logos/kitlogo_de_rgb.eps>
 (epstopdf)             \includegraphics on input line 81.
 Package epstopdf Info: Output file is already uptodate.
 
-<logos/kitlogo_de_rgb-eps-converted-to.pdf, id=128, 196.735pt x 91.34125pt>
+<logos/kitlogo_de_rgb-eps-converted-to.pdf, id=129, 196.735pt x 91.34125pt>
 File: logos/kitlogo_de_rgb-eps-converted-to.pdf Graphic file (type pdf)
 
 <use logos/kitlogo_de_rgb-eps-converted-to.pdf>
@@ -1661,7 +1661,7 @@ Package pdftex.def Info: logos/kitlogo_de_rgb-eps-converted-to.pdf used on inpu
 t line 81.
 (pdftex.def)             Requested size: 65.44133pt x 30.38242pt.
 
-<logos/Logo_IOSB.jpg, id=129, 1330.21968pt x 368.1253pt>
+<logos/Logo_IOSB.jpg, id=130, 1330.21968pt x 368.1253pt>
 File: logos/Logo_IOSB.jpg Graphic file (type jpg)
 
 <use logos/Logo_IOSB.jpg>
@@ -1682,7 +1682,7 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <8> not available
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 7.35999pt on input line 81.
 
-<logos/Gruppenarbeit_klein.jpeg, id=131, 1596.96625pt x 507.8975pt>
+<logos/Gruppenarbeit_klein.jpeg, id=132, 1596.96625pt x 507.8975pt>
 File: logos/Gruppenarbeit_klein.jpeg Graphic file (type jpg)
 
 <use logos/Gruppenarbeit_klein.jpeg>
@@ -1693,7 +1693,7 @@ Package pdftex.def Info: logos/Gruppenarbeit_klein.jpeg used on input line 81.
 {c:/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logos/kitlogo
 _de_rgb-eps-converted-to.pdf> <./logos/Logo_IOSB.jpg> <./logos/Gruppenarbeit_kl
 ein.jpeg>]
-<resources/start.jpg, id=164, 1003.75pt x 1104.125pt>
+<resources/start.jpg, id=165, 1003.75pt x 1104.125pt>
 File: resources/start.jpg Graphic file (type jpg)
 
 <use resources/start.jpg>
@@ -1821,7 +1821,7 @@ t line 107.
  [7
 
 ]
-<resources/start2.jpg, id=498, 1003.75pt x 1104.125pt>
+<resources/start2.jpg, id=506, 1003.75pt x 1104.125pt>
 File: resources/start2.jpg Graphic file (type jpg)
 
 <use resources/start2.jpg>
@@ -2071,7 +2071,7 @@ t line 147.
  [19
 
 ]
-<resources/Jira.jpg, id=1129, 1072.005pt x 541.27219pt>
+<resources/Jira.jpg, id=1150, 1072.005pt x 541.27219pt>
 File: resources/Jira.jpg Graphic file (type jpg)
 
 <use resources/Jira.jpg>
@@ -2097,7 +2097,7 @@ t line 155.
 [20
 
  <./resources/Jira.jpg>]
-<resources/ImpPlanPre.jpg, id=1182, 385.44pt x 512.66531pt>
+<resources/ImpPlanPre.jpg, id=1203, 385.44pt x 512.66531pt>
 File: resources/ImpPlanPre.jpg Graphic file (type jpg)
 
 <use resources/ImpPlanPre.jpg>
@@ -2126,7 +2126,7 @@ Overfull \vbox (3.8221pt too high) detected at line 163
 [21
 
  <./resources/ImpPlanPre.jpg>]
-<resources/Projekt.jpg, id=1235, 1084.05pt x 647.41875pt>
+<resources/Projekt.jpg, id=1257, 1084.05pt x 647.41875pt>
 File: resources/Projekt.jpg Graphic file (type jpg)
 
 <use resources/Projekt.jpg>
@@ -2152,21 +2152,21 @@ t line 171.
 [22
 
  <./resources/Projekt.jpg>]
-<resources/Wahrsager.jpg, id=1287, 301.125pt x 301.125pt>
+<resources/Wahrsager.jpg, id=1310, 301.125pt x 301.125pt>
 File: resources/Wahrsager.jpg Graphic file (type jpg)
 
 <use resources/Wahrsager.jpg>
 Package pdftex.def Info: resources/Wahrsager.jpg used on input line 186.
 (pdftex.def)             Requested size: 105.39532pt x 105.39532pt.
 
-<resources/zauberer.jpg, id=1288, 301.125pt x 301.125pt>
+<resources/zauberer.jpg, id=1311, 301.125pt x 301.125pt>
 File: resources/zauberer.jpg Graphic file (type jpg)
 
 <use resources/zauberer.jpg>
 Package pdftex.def Info: resources/zauberer.jpg used on input line 186.
 (pdftex.def)             Requested size: 105.39532pt x 105.39532pt.
 
-<resources/Hacker.jpg, id=1289, 150.5625pt x 150.5625pt>
+<resources/Hacker.jpg, id=1312, 150.5625pt x 150.5625pt>
 File: resources/Hacker.jpg Graphic file (type jpg)
 
 <use resources/Hacker.jpg>
@@ -2671,7 +2671,7 @@ t line 250.
  [45
 
 ]
-<resources/Daumen.jpg, id=2499, 301.125pt x 301.125pt>
+<resources/Daumen.jpg, id=2545, 301.125pt x 301.125pt>
 File: resources/Daumen.jpg Graphic file (type jpg)
 
 <use resources/Daumen.jpg>
@@ -2825,7 +2825,7 @@ File: resources/ImpPlanPre.jpg Graphic file (type jpg)
 Package pdftex.def Info: resources/ImpPlanPre.jpg used on input line 279.
 (pdftex.def)             Requested size: 154.17326pt x 205.06248pt.
 
-<resources/ImpPlanPost.jpg, id=2814, 374.14781pt x 509.65407pt>
+<resources/ImpPlanPost.jpg, id=2866, 374.14781pt x 509.65407pt>
 File: resources/ImpPlanPost.jpg Graphic file (type jpg)
 
 <use resources/ImpPlanPost.jpg>
@@ -2855,7 +2855,7 @@ Overfull \vbox (3.8221pt too high) detected at line 279
 [52
 
  <./resources/ImpPlanPost.jpg>]
-<resources/Code.jpg, id=2866, 1084.05pt x 638.385pt>
+<resources/Code.jpg, id=2920, 1084.05pt x 638.385pt>
 File: resources/Code.jpg Graphic file (type jpg)
  <use resources/Code.jpg>
 Package pdftex.def Info: resources/Code.jpg used on input line 286.
@@ -2880,18 +2880,44 @@ t line 286.
  [53
 
  <./resources/Code.jpg>]
-<resources/ServiceDemo.jpg, id=2919, 687.31781pt x 379.4175pt>
+<resources/ServiceDemo.jpg, id=2973, 687.31781pt x 379.4175pt>
 File: resources/ServiceDemo.jpg Graphic file (type jpg)
 
 <use resources/ServiceDemo.jpg>
-Package pdftex.def Info: resources/ServiceDemo.jpg used on input line 294.
-(pdftex.def)             Requested size: 206.19693pt x 113.82613pt.
+Package pdftex.def Info: resources/ServiceDemo.jpg used on input line 293.
+(pdftex.def)             Requested size: 274.92226pt x 151.7643pt.
+Package epstopdf Info: Source file: <logos/kitlogo_de_rgb.eps>
+(epstopdf)                    date: 2017-01-10 15:00:51
+(epstopdf)                    size: 30758 bytes
+(epstopdf)             Output file: <logos/kitlogo_de_rgb-eps-converted-to.pdf>
 
-<resources/AppDemo.jpg, id=2920, 902.37125pt x 1604.99625pt>
+(epstopdf)                    date: 2017-02-08 10:47:06
+(epstopdf)                    size: 13343 bytes
+(epstopdf)             Command: <repstopdf --outfile=logos/kitlogo_de_rgb-eps-c
+onverted-to.pdf logos/kitlogo_de_rgb.eps>
+(epstopdf)             \includegraphics on input line 293.
+Package epstopdf Info: Output file is already uptodate.
+File: logos/kitlogo_de_rgb-eps-converted-to.pdf Graphic file (type pdf)
+
+<use logos/kitlogo_de_rgb-eps-converted-to.pdf>
+Package pdftex.def Info: logos/kitlogo_de_rgb-eps-converted-to.pdf used on inpu
+t line 293.
+(pdftex.def)             Requested size: 39.83385pt x 18.4937pt.
+ [54
+
+ <./resources/ServiceDemo.jpg>] <resources/AppDemo.jpg, id=3027, 902.37125pt x 
+1604.99625pt>
 File: resources/AppDemo.jpg Graphic file (type jpg)
 
 <use resources/AppDemo.jpg>
-Package pdftex.def Info: resources/AppDemo.jpg used on input line 294.
+Package pdftex.def Info: resources/AppDemo.jpg used on input line 300.
+(pdftex.def)             Requested size: 90.2424pt x 160.50902pt.
+
+<resources/AppDemo2.jpg, id=3028, 902.37125pt x 1604.99625pt>
+File: resources/AppDemo2.jpg Graphic file (type jpg)
+
+<use resources/AppDemo2.jpg>
+Package pdftex.def Info: resources/AppDemo2.jpg used on input line 300.
 (pdftex.def)             Requested size: 90.2424pt x 160.50902pt.
 Package epstopdf Info: Source file: <logos/kitlogo_de_rgb.eps>
 (epstopdf)                    date: 2017-01-10 15:00:51
@@ -2902,22 +2928,22 @@ Package epstopdf Info: Source file: <logos/kitlogo_de_rgb.eps>
 (epstopdf)                    size: 13343 bytes
 (epstopdf)             Command: <repstopdf --outfile=logos/kitlogo_de_rgb-eps-c
 onverted-to.pdf logos/kitlogo_de_rgb.eps>
-(epstopdf)             \includegraphics on input line 294.
+(epstopdf)             \includegraphics on input line 300.
 Package epstopdf Info: Output file is already uptodate.
 File: logos/kitlogo_de_rgb-eps-converted-to.pdf Graphic file (type pdf)
  <use logos/kitlogo_de_rgb-eps-converted-to.pdf>
 Package pdftex.def Info: logos/kitlogo_de_rgb-eps-converted-to.pdf used on inpu
-t line 294.
+t line 300.
 (pdftex.def)             Requested size: 39.83385pt x 18.4937pt.
 
-[54
+[55
 
- <./resources/ServiceDemo.jpg> <./resources/AppDemo.jpg>]
-<resources/final.jpg, id=2972, 559.33969pt x 867.24pt>
+ <./resources/AppDemo.jpg> <./resources/AppDemo2.jpg>]
+<resources/final.jpg, id=3082, 559.33969pt x 867.24pt>
 File: resources/final.jpg Graphic file (type jpg)
 
 <use resources/final.jpg>
-Package pdftex.def Info: resources/final.jpg used on input line 301.
+Package pdftex.def Info: resources/final.jpg used on input line 307.
 (pdftex.def)             Requested size: 111.86595pt x 173.44493pt.
 Package epstopdf Info: Source file: <logos/kitlogo_de_rgb.eps>
 (epstopdf)                    date: 2017-01-10 15:00:51
@@ -2928,15 +2954,15 @@ Package epstopdf Info: Source file: <logos/kitlogo_de_rgb.eps>
 (epstopdf)                    size: 13343 bytes
 (epstopdf)             Command: <repstopdf --outfile=logos/kitlogo_de_rgb-eps-c
 onverted-to.pdf logos/kitlogo_de_rgb.eps>
-(epstopdf)             \includegraphics on input line 301.
+(epstopdf)             \includegraphics on input line 307.
 Package epstopdf Info: Output file is already uptodate.
 File: logos/kitlogo_de_rgb-eps-converted-to.pdf Graphic file (type pdf)
  <use logos/kitlogo_de_rgb-eps-converted-to.pdf>
 Package pdftex.def Info: logos/kitlogo_de_rgb-eps-converted-to.pdf used on inpu
-t line 301.
+t line 307.
 (pdftex.def)             Requested size: 39.83385pt x 18.4937pt.
 
-[55
+[56
 
  <./resources/final.jpg>]
 Package epstopdf Info: Source file: <logos/kitlogo_de_rgb.eps>
@@ -2948,42 +2974,42 @@ Package epstopdf Info: Source file: <logos/kitlogo_de_rgb.eps>
 (epstopdf)                    size: 13343 bytes
 (epstopdf)             Command: <repstopdf --outfile=logos/kitlogo_de_rgb-eps-c
 onverted-to.pdf logos/kitlogo_de_rgb.eps>
-(epstopdf)             \includegraphics on input line 341.
+(epstopdf)             \includegraphics on input line 347.
 Package epstopdf Info: Output file is already uptodate.
 File: logos/kitlogo_de_rgb-eps-converted-to.pdf Graphic file (type pdf)
  <use logos/kitlogo_de_rgb-eps-converted-to.pdf>
 Package pdftex.def Info: logos/kitlogo_de_rgb-eps-converted-to.pdf used on inpu
-t line 341.
+t line 347.
 (pdftex.def)             Requested size: 39.83385pt x 18.4937pt.
 
-[56
+[57
 
-] <resources/GithubApp.jpg, id=3077, 746.03719pt x 462.22687pt>
+] <resources/GithubApp.jpg, id=3189, 746.03719pt x 462.22687pt>
 File: resources/GithubApp.jpg Graphic file (type jpg)
 
 <use resources/GithubApp.jpg>
-Package pdftex.def Info: resources/GithubApp.jpg used on input line 349.
+Package pdftex.def Info: resources/GithubApp.jpg used on input line 355.
 (pdftex.def)             Requested size: 149.20479pt x 92.44373pt.
 
-<resources/GithubService.jpg, id=3078, 750.55406pt x 457.71pt>
+<resources/GithubService.jpg, id=3190, 750.55406pt x 457.71pt>
 File: resources/GithubService.jpg Graphic file (type jpg)
 
 <use resources/GithubService.jpg>
-Package pdftex.def Info: resources/GithubService.jpg used on input line 349.
+Package pdftex.def Info: resources/GithubService.jpg used on input line 355.
 (pdftex.def)             Requested size: 150.10815pt x 91.54037pt.
 
-<resources/GithubInterface.jpg, id=3079, 750.55406pt x 457.71pt>
+<resources/GithubInterface.jpg, id=3191, 750.55406pt x 457.71pt>
 File: resources/GithubInterface.jpg Graphic file (type jpg)
 
 <use resources/GithubInterface.jpg>
-Package pdftex.def Info: resources/GithubInterface.jpg used on input line 349.
+Package pdftex.def Info: resources/GithubInterface.jpg used on input line 355.
 (pdftex.def)             Requested size: 150.10815pt x 91.54037pt.
 
-<resources/GithubImp.jpg, id=3080, 743.77875pt x 459.21562pt>
+<resources/GithubImp.jpg, id=3192, 743.77875pt x 459.21562pt>
 File: resources/GithubImp.jpg Graphic file (type jpg)
 
 <use resources/GithubImp.jpg>
-Package pdftex.def Info: resources/GithubImp.jpg used on input line 349.
+Package pdftex.def Info: resources/GithubImp.jpg used on input line 355.
 (pdftex.def)             Requested size: 148.75311pt x 91.84149pt.
 Package epstopdf Info: Source file: <logos/kitlogo_de_rgb.eps>
 (epstopdf)                    date: 2017-01-10 15:00:51
@@ -2994,23 +3020,23 @@ Package epstopdf Info: Source file: <logos/kitlogo_de_rgb.eps>
 (epstopdf)                    size: 13343 bytes
 (epstopdf)             Command: <repstopdf --outfile=logos/kitlogo_de_rgb-eps-c
 onverted-to.pdf logos/kitlogo_de_rgb.eps>
-(epstopdf)             \includegraphics on input line 349.
+(epstopdf)             \includegraphics on input line 355.
 Package epstopdf Info: Output file is already uptodate.
 File: logos/kitlogo_de_rgb-eps-converted-to.pdf Graphic file (type pdf)
  <use logos/kitlogo_de_rgb-eps-converted-to.pdf>
 Package pdftex.def Info: logos/kitlogo_de_rgb-eps-converted-to.pdf used on inpu
-t line 349.
+t line 355.
 (pdftex.def)             Requested size: 39.83385pt x 18.4937pt.
 
-[57
+[58
 
  <./resources/GithubApp.jpg> <./resources/GithubService.jpg> <./resources/Githu
 bInterface.jpg> <./resources/GithubImp.jpg>]
-<resources/Gruppenarbeit.jpeg, id=3133, 1606.0pt x 1204.5pt>
+<resources/Gruppenarbeit.jpeg, id=3245, 1606.0pt x 1204.5pt>
 File: resources/Gruppenarbeit.jpeg Graphic file (type jpg)
 
 <use resources/Gruppenarbeit.jpeg>
-Package pdftex.def Info: resources/Gruppenarbeit.jpeg used on input line 358.
+Package pdftex.def Info: resources/Gruppenarbeit.jpeg used on input line 364.
 (pdftex.def)             Requested size: 256.96526pt x 192.72394pt.
 Package epstopdf Info: Source file: <logos/kitlogo_de_rgb.eps>
 (epstopdf)                    date: 2017-01-10 15:00:51
@@ -3021,18 +3047,18 @@ Package epstopdf Info: Source file: <logos/kitlogo_de_rgb.eps>
 (epstopdf)                    size: 13343 bytes
 (epstopdf)             Command: <repstopdf --outfile=logos/kitlogo_de_rgb-eps-c
 onverted-to.pdf logos/kitlogo_de_rgb.eps>
-(epstopdf)             \includegraphics on input line 358.
+(epstopdf)             \includegraphics on input line 364.
 Package epstopdf Info: Output file is already uptodate.
 File: logos/kitlogo_de_rgb-eps-converted-to.pdf Graphic file (type pdf)
 
 <use logos/kitlogo_de_rgb-eps-converted-to.pdf>
 Package pdftex.def Info: logos/kitlogo_de_rgb-eps-converted-to.pdf used on inpu
-t line 358.
+t line 364.
 (pdftex.def)             Requested size: 39.83385pt x 18.4937pt.
- [58
+ [59
 
  <./resources/Gruppenarbeit.jpeg>]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 371.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 377.
 
  (c:/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -3046,15 +3072,15 @@ Package epstopdf Info: Source file: <logos/kitlogo_de_rgb.eps>
 (epstopdf)                    size: 13343 bytes
 (epstopdf)             Command: <repstopdf --outfile=logos/kitlogo_de_rgb-eps-c
 onverted-to.pdf logos/kitlogo_de_rgb.eps>
-(epstopdf)             \includegraphics on input line 371.
+(epstopdf)             \includegraphics on input line 377.
 Package epstopdf Info: Output file is already uptodate.
 File: logos/kitlogo_de_rgb-eps-converted-to.pdf Graphic file (type pdf)
 
 <use logos/kitlogo_de_rgb-eps-converted-to.pdf>
 Package pdftex.def Info: logos/kitlogo_de_rgb-eps-converted-to.pdf used on inpu
-t line 371.
+t line 377.
 (pdftex.def)             Requested size: 39.83385pt x 18.4937pt.
- [59
+ [60
 
 ]
 \tf@nav=\write7
@@ -3066,24 +3092,24 @@ t line 371.
 \tf@snm=\write9
 \openout9 = `PCC-Imp-Presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 373.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 373.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 379.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 379.
 
 (./PCC-Imp-Presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 373.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 373.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 379.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 379.
 Package rerunfilecheck Info: File `PCC-Imp-Presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 3A68EB82C747E6468C2C9113771A13A1;1308.
+(rerunfilecheck)             Checksum: C1BFA27A815A5CCE460FEEDFC3C95A97;1308.
 Package logreq Info: Writing requests to 'PCC-Imp-Presentation.run.xml'.
 \openout1 = `PCC-Imp-Presentation.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 373.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 379.
  ) 
 Here is how much of TeX's memory you used:
- 27265 strings out of 493027
- 515846 string characters out of 6137684
+ 27274 strings out of 493027
+ 516002 string characters out of 6137684
  969171 words of memory out of 5000000
- 30010 multiletter control sequences out of 15000+600000
+ 30016 multiletter control sequences out of 15000+600000
  48196 words of font info for 69 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  56i,19n,59p,966b,1546s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3092,10 +3118,10 @@ ive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2015/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/
 public/cm-super/sftt1095.pfb><c:/texlive/2015/texmf-dist/fonts/type1/urw/helvet
 ic/uhvb8a.pfb><c:/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on PCC-Imp-Presentation.pdf (59 pages, 2698765 bytes).
+Output written on PCC-Imp-Presentation.pdf (60 pages, 2768485 bytes).
 PDF statistics:
- 3299 PDF objects out of 3580 (max. 8388607)
- 3147 compressed objects within 32 object streams
- 141 named destinations out of 1000 (max. 500000)
- 329 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3413 PDF objects out of 3580 (max. 8388607)
+ 3257 compressed objects within 33 object streams
+ 143 named destinations out of 1000 (max. 500000)
+ 334 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -38,14 +38,14 @@
 \defcounter {refsection}{0}\relax 
 \beamer@subsectionintoc {4}{3}{Oberfl\IeC {\"a}che}{54}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {4}{4}{Final}{55}{0}{4}
+\beamer@subsectionintoc {4}{4}{Final}{56}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {5}{Organisation}{56}{0}{5}
+\beamer@sectionintoc {5}{Organisation}{57}{0}{5}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {5}{1}{Aufgabenverteilung}{56}{0}{5}
+\beamer@subsectionintoc {5}{1}{Aufgabenverteilung}{57}{0}{5}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {5}{2}{Github}{57}{0}{5}
+\beamer@subsectionintoc {5}{2}{Github}{58}{0}{5}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {6}{Gruppenarbeit}{58}{0}{6}
+\beamer@sectionintoc {6}{Gruppenarbeit}{59}{0}{6}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {7}{Quellen}{59}{0}{7}
+\beamer@sectionintoc {7}{Quellen}{60}{0}{7}
