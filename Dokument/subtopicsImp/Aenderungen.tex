@@ -53,8 +53,14 @@ Es wurden getter für response und videoName hinzugefügt.
 
 \section{Interface}
 
-\subsection{AccountDataManager}
+\subsection{Login}
+Die LoginView wird bei jedem Start angezeigt noch bevor der Navigator erzeugt wird. Dadurch wird verhindert, dass durch vor und zurückspringen der Login übergangen werden kann. Zusätzlich hat die MyUI Klasse eine Methode login() bekommen, die den Navigator und das Menü erzeugt und dann zur VideoView wechselt.
 
+\subsection{AccountView}
+Die AccountView hat eine Refernez auf die UI bekommen, somit kann nach Ändern oder Löschen eines Accounts der Benutzer ausgeloggt wird.
+
+\subsection{AccountDataManager}
+Die Klasse hatte einen Account als Klassen Attribut, dies wäre zum Problem geworden wenn mehrere Benutzer gleichzeitig eingeloggt sind. Deshalb wurde dieses Attribut durch ein von Vaadin bereitgestelltes Sessionattribut ersetzt. Nun kann über wo der Account benötigt wird er aus der Session via key gelesen werden.
 
 \subsection{VideoDataManager}
 
@@ -66,4 +72,7 @@ viel
 Da wie bei dem \nameref{sec:VideoManager} keine Datenobjekte zwischen Interface und Dienst ausgetauscht werden können, wird auch hier nun ein JSON-String erstellt. Dafür wurde die Methode getAsJson() eingeführt.
 
 \subsection{Video}
-Konstruktor
+Beim erzeugen der Liste der Videos, werden zuerst die Videos in die Liste eingefügt und anschließend die Meta Informationen hinzugefügt. Deshalb wird ein Konstruktor in der Klasse Video benötigt, mit dem man ein Video ohne Meta Informationen erzeugen kann.
+
+\subsection{MailService}
+Die Klasse hat eine Methode bekommen mit der sie e-mail Adressen auf korrekte Syntax prüfen kann.
