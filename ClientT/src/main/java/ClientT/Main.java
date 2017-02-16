@@ -1,7 +1,6 @@
 package ClientT;
 
 
-import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.MultiPart;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
@@ -29,15 +28,13 @@ import java.util.concurrent.Future;
  */
 public class Main
 {
-    private static String accountData;
-    private static String newAccountData;
-
-    //change uuid for different accounts
-    private static String uuid = "456asdasd-asf43a3-asd3";
-
     //local and server address
     //private static final String MAIN_ADDRESS = "http://localhost:2222/webservice/";
     private static final String MAIN_ADDRESS = "http://laubenstone.de:2222/webservice/";
+    private static String accountData;
+    private static String newAccountData;
+    //change uuid for different accounts
+    private static String uuid = "456asdasd-asf43a3-asd3";
 
     public static void main( String[] args ) {
         // every request needs a setup
@@ -45,7 +42,6 @@ public class Main
 
         //different requests here
         upload();
-
     }
 
     private static void setUp() {
@@ -70,6 +66,7 @@ public class Main
         Response response = webTarget.request().post(Entity.entity(f, MediaType.APPLICATION_FORM_URLENCODED_TYPE),Response.class);
         System.out.println(response.readEntity(String.class));
         accountData = newAccountData;
+        client.close();
     }
 
     private static void createAccount() {
@@ -81,6 +78,7 @@ public class Main
         System.out.println(webTarget.getUri());
         Response response = webTarget.request().post(Entity.entity(f, MediaType.APPLICATION_FORM_URLENCODED_TYPE),Response.class);
         System.out.println(response.readEntity(String.class));
+        client.close();
     }
 
     private static void deleteAccount () {
@@ -91,6 +89,7 @@ public class Main
         System.out.println(webTarget.getUri());
         Response response = webTarget.request().post(Entity.entity(f, MediaType.APPLICATION_FORM_URLENCODED_TYPE),Response.class);
         System.out.println(response.readEntity(String.class));
+        client.close();
     }
 
     private static void verifyAccount () {
@@ -102,6 +101,7 @@ public class Main
         System.out.println(webTarget.getUri());
         Response response = webTarget.request().post(Entity.entity(f, MediaType.APPLICATION_FORM_URLENCODED_TYPE),Response.class);
         System.out.println(response.readEntity(String.class));
+        client.close();
     }
 
     private static void authenticate() {
@@ -112,6 +112,7 @@ public class Main
         System.out.println(webTarget.getUri());
         Response response = webTarget.request().post(Entity.entity(f, MediaType.APPLICATION_FORM_URLENCODED_TYPE),Response.class);
         System.out.println(response.readEntity(String.class));
+        client.close();
     }
 
     private static void download() {
@@ -123,7 +124,7 @@ public class Main
         Response response = webTarget.request().post(Entity.entity(f, MediaType.APPLICATION_FORM_URLENCODED_TYPE), Response.class);
         InputStream inputStream = response.readEntity(InputStream.class);
         if (response.getStatus() == 200) {
-            File downloadFile = new File("c://test/test.avi");
+            File downloadFile = new File("target" + File.separator + "downloaded.avi");
             try {
                 Files.copy(inputStream, downloadFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
                 downloadFile.delete();
@@ -131,18 +132,25 @@ public class Main
                 e.printStackTrace();
             }
         }
+        client.close();
     }
 
 
     private static void upload() {
+        File videoFile = new File("src" + File.separator + "main" + File.separator + "resources" + File.separator + "VIDEO_1487198226374.mp4");
+        File metadataFile = new File("src" + File.separator + "main" + File.separator + "resources" + File.separator + "META_1487198226374.json");
+        File keyFile = new File("src" + File.separator + "main" + File.separator + "resources" + File.separator + "KEY_1487198226374.key");
+
         Client client = ClientBuilder.newClient();
         WebTarget webTarget = client.target(MAIN_ADDRESS).path("videoUpload").register(MultiPartFeature.class);
         MultiPart multiPart = new MultiPart();
         multiPart.setMediaType(MediaType.MULTIPART_FORM_DATA_TYPE);
-        FileDataBodyPart video = new FileDataBodyPart("video", new File("C:\\Informatik-Studium\\PSE\\git\\pcc-imp-webservice\\src\\test\\resources\\encVid.mp4"), MediaType.APPLICATION_OCTET_STREAM_TYPE);
-        FileDataBodyPart metadata = new FileDataBodyPart("metadata", new File("C:\\Informatik-Studium\\PSE\\git\\pcc-imp-webservice\\src\\test\\resources\\encMeta.json"), MediaType.APPLICATION_OCTET_STREAM_TYPE);
-        FileDataBodyPart key = new FileDataBodyPart("key", new File("C:\\Informatik-Studium\\PSE\\git\\pcc-imp-webservice\\src\\test\\resources\\encKey.txt"), MediaType.APPLICATION_OCTET_STREAM_TYPE);
+
+        FileDataBodyPart video = new FileDataBodyPart("video", videoFile, MediaType.APPLICATION_OCTET_STREAM_TYPE);
+        FileDataBodyPart metadata = new FileDataBodyPart("metadata", metadataFile, MediaType.APPLICATION_OCTET_STREAM_TYPE);
+        FileDataBodyPart key = new FileDataBodyPart("key", keyFile, MediaType.APPLICATION_OCTET_STREAM_TYPE);
         FormDataBodyPart data = new FormDataBodyPart("account", accountData);
+
         multiPart.bodyPart(video);
         multiPart.bodyPart(metadata);
         multiPart.bodyPart(key);
@@ -155,5 +163,6 @@ public class Main
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
+        client.close();
     }
 }
