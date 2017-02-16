@@ -7,6 +7,7 @@ import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;
 import org.json.JSONObject;
 
+import javax.ws.rs.ProcessingException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -29,8 +30,8 @@ import java.util.concurrent.Future;
 public class Main
 {
     //local and server address
-    //private static final String MAIN_ADDRESS = "http://localhost:2222/webservice/";
-    private static final String MAIN_ADDRESS = "http://laubenstone.de:2222/webservice/";
+    private static final String HOST = "http://localhost:2222/webservice/";
+    private static final String LOCAL_HOST = "http://laubenstone.de:2222/webservice/";
     private static String accountData;
     private static String newAccountData;
     //change uuid for different accounts
@@ -51,8 +52,8 @@ public class Main
         accountData = jsonObject.toString();
 
         JSONObject jsonObject2 = new JSONObject();
-        jsonObject2.put("mail", "ginnyMachtPopoliebeMitHarry@HogXXX.nice");
-        jsonObject2.put("password", "lolHAHA");
+        jsonObject2.put("mail", "josh.romanowski@gmail.com");
+        jsonObject2.put("password", "123456");
         newAccountData = jsonObject2.toString();
     }
 
@@ -61,7 +62,7 @@ public class Main
         f.param("account", accountData);
         f.param("newAccount", newAccountData);
         Client client = ClientBuilder.newClient();
-        WebTarget webTarget = client.target(MAIN_ADDRESS).path("changeAccount");
+        WebTarget webTarget = client.target(HOST).path("changeAccount");
         System.out.println(webTarget.getUri());
         Response response = webTarget.request().post(Entity.entity(f, MediaType.APPLICATION_FORM_URLENCODED_TYPE),Response.class);
         System.out.println(response.readEntity(String.class));
@@ -74,7 +75,7 @@ public class Main
         f.param("account", accountData);
         f.param("uuid", uuid);
         Client client = ClientBuilder.newClient();
-        WebTarget webTarget = client.target(MAIN_ADDRESS).path("createAccount");
+        WebTarget webTarget = client.target(HOST).path("createAccount");
         System.out.println(webTarget.getUri());
         Response response = webTarget.request().post(Entity.entity(f, MediaType.APPLICATION_FORM_URLENCODED_TYPE),Response.class);
         System.out.println(response.readEntity(String.class));
@@ -85,7 +86,7 @@ public class Main
         Form f = new Form();
         f.param("account", accountData);
         Client client = ClientBuilder.newClient();
-        WebTarget webTarget = client.target(MAIN_ADDRESS).path("deleteAccount");
+        WebTarget webTarget = client.target(HOST).path("deleteAccount");
         System.out.println(webTarget.getUri());
         Response response = webTarget.request().post(Entity.entity(f, MediaType.APPLICATION_FORM_URLENCODED_TYPE),Response.class);
         System.out.println(response.readEntity(String.class));
@@ -97,7 +98,7 @@ public class Main
         f.param("account", accountData);
         f.param("uuid", uuid);
         Client client = ClientBuilder.newClient();
-        WebTarget webTarget = client.target(MAIN_ADDRESS).path("verifyAccount");
+        WebTarget webTarget = client.target(HOST).path("verifyAccount");
         System.out.println(webTarget.getUri());
         Response response = webTarget.request().post(Entity.entity(f, MediaType.APPLICATION_FORM_URLENCODED_TYPE),Response.class);
         System.out.println(response.readEntity(String.class));
@@ -108,7 +109,7 @@ public class Main
         Form f = new Form();
         f.param("account", accountData);
         Client client = ClientBuilder.newClient();
-        WebTarget webTarget = client.target(MAIN_ADDRESS).path("authenticate");
+        WebTarget webTarget = client.target(HOST).path("authenticate");
         System.out.println(webTarget.getUri());
         Response response = webTarget.request().post(Entity.entity(f, MediaType.APPLICATION_FORM_URLENCODED_TYPE),Response.class);
         System.out.println(response.readEntity(String.class));
@@ -120,7 +121,7 @@ public class Main
         f.param("account", accountData);
         f.param("videoId", "1");
         Client client = ClientBuilder.newClient();
-        WebTarget webTarget = client.target(MAIN_ADDRESS).path("videoDownload");
+        WebTarget webTarget = client.target(HOST).path("videoDownload");
         Response response = webTarget.request().post(Entity.entity(f, MediaType.APPLICATION_FORM_URLENCODED_TYPE), Response.class);
         InputStream inputStream = response.readEntity(InputStream.class);
         if (response.getStatus() == 200) {
@@ -142,14 +143,14 @@ public class Main
         File keyFile = new File("src" + File.separator + "main" + File.separator + "resources" + File.separator + "KEY_1487198226374.key");
 
         Client client = ClientBuilder.newClient();
-        WebTarget webTarget = client.target(MAIN_ADDRESS).path("videoUpload").register(MultiPartFeature.class);
+        WebTarget webTarget = client.target(HOST).path("videoUpload").register(MultiPartFeature.class);
         MultiPart multiPart = new MultiPart();
         multiPart.setMediaType(MediaType.MULTIPART_FORM_DATA_TYPE);
 
         FileDataBodyPart video = new FileDataBodyPart("video", videoFile, MediaType.APPLICATION_OCTET_STREAM_TYPE);
         FileDataBodyPart metadata = new FileDataBodyPart("metadata", metadataFile, MediaType.APPLICATION_OCTET_STREAM_TYPE);
         FileDataBodyPart key = new FileDataBodyPart("key", keyFile, MediaType.APPLICATION_OCTET_STREAM_TYPE);
-        FormDataBodyPart data = new FormDataBodyPart("account", accountData);
+        FormDataBodyPart data = new FormDataBodyPart("account", newAccountData);
 
         multiPart.bodyPart(video);
         multiPart.bodyPart(metadata);
@@ -160,7 +161,7 @@ public class Main
         try {
             Response response = futureResponse.get();
             System.out.println(response.readEntity(String.class));
-        } catch (InterruptedException | ExecutionException e) {
+        } catch (InterruptedException | ExecutionException | ProcessingException e) {
             e.printStackTrace();
         }
         client.close();
