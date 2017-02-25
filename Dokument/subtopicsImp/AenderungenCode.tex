@@ -1,4 +1,4 @@
-\chapter{Änderungen} \label{chap:Aenderungen}
+\chapter{Änderungen (Code)} \label{chap:AenderungenCode}
 
 \section{App}
 
@@ -21,11 +21,11 @@ Da eine generische Impementierung des RingBuffers den spezifischen Anforderungen
 Für eine erweiterte Funktionalität wurden die Methoden flushAll() und den Inhalt des Puffers zu leeren und destroy() zum Löschen des Puffers hinzugefügt.
 
 \subsection{MemoryManager} \label{MemoryManager}
-Die Handhabung temporärer Dateien wurde erweitert, so dass jede neue MemeoryManager Instanz einen neuen Ordner als aktuellen Ablageort temporärer Daten erzeugt. Dies erleichtert die Arbeit mit den Dateien, die innerhalb eines Ordner liegen, da garantiert ist, dass der Ordnerinhalt nicht von anderen Threads modifiziert wird. \par
-Das Alloziieren und Löschen der temporären Dateien brachte in Android jedoch unerwartet probleme mit sich. Temporäre Dateien sollten beim beenden der App gelöscht werden, allerdings wartete unsere App meistens vergeblich auf die Benachrichtigung, der Nutezr hätte die App beendet. Die Folge war eine Anhäufung der temporären Dateien ohne Chance diese löschen zu können. Daher haben wir die Methode deleteCurrentTempData() und deleteAllTempData() hinzugefügt. \par
+Die Handhabung temporärer Dateien wurde erweitert, sodass jede neue MemeoryManager Instanz einen neuen Ordner als aktuellen Ablageort temporärer Daten erzeugt. Dies erleichtert die Arbeit mit den Dateien, die innerhalb eines Ordner liegen, da garantiert ist, dass der Ordnerinhalt nicht von anderen Threads modifiziert wird. \par
+Das Allokieren und Löschen der temporären Dateien brachte in Android jedoch unerwartet Probleme mit sich. Temporäre Dateien sollten beim beenden der App gelöscht werden, allerdings wartete unsere App meistens vergeblich auf die Benachrichtigung, der Nutzer hätte die App beendet. Die Folge war eine Anhäufung der temporären Dateien ohne Chance diese löschen zu können. Daher haben wir die Methode deleteCurrentTempData() und deleteAllTempData() hinzugefügt. \par
 
 \subsection{CameraHandler} \label{CameraHandler}
-Da die Implementierung des CameraHandler Interfaces recht schnell komplex und unübersichtlich werden kann, haben wir Bequemlichkeits-Methoden eingefügt, die einen Lifecycle realisieren und von Klienten in der vorgegebenen Reihenfolge aufgerufen werden. Somit haben Klienten eine bessere Kontrolle über den Handler und können ihn mit ihren eigenen Lifecycles, also dem Lifecycle der Fragments, SurfaceViews oder Activities, synchronisieren. Dieses vorgehen bündelt darüber hinaus kritische Operationen, wie den Kamera-Zugriff, und sensible Anweisungen die zu einer bestimmten Zeit geschehen sollten, wie das löschen der temporären Datein, in den neu eingefügten Methoden. Das ergebnis ist ein klarerer und leichter lesbarer Code.
+Da die Implementierung des CameraHandler-Interfaces recht schnell komplex und unübersichtlich werden kann, haben wir Bequemlichkeits-Methoden eingefügt, die einen Lifecycle realisieren und von Klienten in der vorgegebenen Reihenfolge aufgerufen werden. Somit haben Klienten eine bessere Kontrolle über den Handler und können ihn mit ihren eigenen Lifecycles, also dem Lifecycle der Fragments, SurfaceViews oder Activities, synchronisieren. Dieses vorgehen bündelt darüber hinaus kritische Operationen, wie den Kamera-Zugriff, und sensible Anweisungen die zu einer bestimmten Zeit geschehen sollten, wie das löschen der temporären Dateien, in den neu eingefügten Methoden. Das Ergebnis ist ein klarerer und leichter lesbarer Code.
 
 \section{Web-Dienst}
 
@@ -59,28 +59,37 @@ Da wir uns entschieden haben einen eigenen Ordner für log-Files zu erstellen wu
 Um es bei der Fehlerbehandlung zu ermöglichen einzelne Chains aufzuräumen, wurde eine Funktion cleanUp() hinzugefügt. Diese dupliziert zur Zeit die Funktionalität von deleteTmpFiles(), ist aber nützlich falls man die Fehlerbehandlung erweitern möchte. \par 
 Es wurden getter für response und videoName hinzugefügt.
 
+\subsection{VideoProcessing.Chain}
+Um die VideoProcessingChain besser zu organisieren wurde das Paket in Unterpakete für die komplexen Bearbeitungsschritte (z.B. Anonymisierung) aufgeteilt
+
+\subsection{OpenCVAnonymizer}
+Die Klassen Anonymizer, ExampleAnalyzer und ExampleFilter wurden in OpenCVAnonymizer, OpenCVAnalyzer und OpenCVFilter umbenannt, um aussagekräftigere Namen zu geben.
+
+\subsection{OpenCVFilter}
+Der Typ von detections in der methode filter() wurde von Rect in RectVector geändert, da eine andere Version von OpenCV verwendet wird, wie zunächst angenommen und diese einen andere Bezeichnung für die Klasse verwendet. Die Funktionalität bleibt gleich.
+
 \section{Interface}
 
 \subsection{Login}
 Die LoginView wird bei jedem Start angezeigt noch bevor der Navigator erzeugt wird. Dadurch wird verhindert, dass durch vor und zurückspringen der Login übergangen werden kann. Zusätzlich hat die MyUI Klasse eine Methode login() bekommen, die den Navigator und das Menü erzeugt und dann zur VideoView wechselt.
 
 \subsection{AccountView}
-Die AccountView hat eine Refernez auf die UI bekommen, somit kann nach Ändern oder Löschen eines Accounts der Benutzer ausgeloggt wird.
+Die AccountView hat eine Referenz auf die UI bekommen. Somit kann nach Ändern oder Löschen eines Accounts der Benutzer ausgeloggt werden.
 
 \subsection{AccountDataManager}
-Die Klasse hatte einen Account als Klassen Attribut, dies wäre zum Problem geworden wenn mehrere Benutzer gleichzeitig eingeloggt sind. Deshalb wurde dieses Attribut durch ein von Vaadin bereitgestelltes Sessionattribut ersetzt. Nun kann über wo der Account benötigt wird er aus der Session via key gelesen werden.
-
-\subsection{VideoDataManager}
-
+Die Klasse hatte einen Account als Klassenattribut. Dies wäre zum Problem geworden wenn mehrere Benutzer gleichzeitig eingeloggt sind, da das Attribut ständig überschrieben würde. Deshalb wurde dieses Attribut durch ein von Vaadin bereitgestelltes Sessionattribut, das nur während einem Aufruf der Seite gültig ist, ersetzt.
 
 \subsection{Download} \label{sec:Download}
-viel
+Der VideoDownload über den, von Vaadin bereitgestellten, FileDownloader stellte uns vor einige Herausforderungen, da dieser verlangte die herunterzuladende Ressource bereits bei der Initialisierung bereit zu stellen. Zudem muss der erstellte FileDownloader auf einen Button angemeldet werden, der dann den Download startet. \par
+Unser erster Versuch war durch einen ersten Button den FileDownloader zu erzeugen und dann durch einen zweiten den Download zu starten. Dabei wurde das Video beim ersten Klick als File geladen. Da der FileDownloader jedoch keine Statusmeldung bereit stellt wussten wir nicht, wann wir das File wieder löschen können. \par
+Darauf versuchten wir das Video als Stream bereitzustellen. Allerdings hält der FileDownloader den Stream bis zum tatsächlichen Download offen, was dazu führte dass es zu Timeouts kam, wenn man zu lange wartete. \par
+Schließlich haben wir einen File-Proxy geschrieben, der gegenüber dem FileDownloader als fertige Ressource agiert, das Video allerdings erst anfragt, wenn der Download tatsächlich gestartet wird, sodass keine Timeouts entstehen. Dies hat zudem erlaubt den ersten Button zu entfernen.
 
 \subsection{Account}
 Da wie bei dem \nameref{sec:VideoManager} keine Datenobjekte zwischen Interface und Dienst ausgetauscht werden können, wird auch hier nun ein JSON-String erstellt. Dafür wurde die Methode getAsJson() eingeführt.
 
 \subsection{Video}
-Beim erzeugen der Liste der Videos, werden zuerst die Videos in die Liste eingefügt und anschließend die Meta Informationen hinzugefügt. Deshalb wird ein Konstruktor in der Klasse Video benötigt, mit dem man ein Video ohne Meta Informationen erzeugen kann.
+Beim Erzeugen der Liste der Videos, werden zuerst die Videos in die Liste eingefügt und anschließend die Metadaten hinzugefügt. Deshalb wird ein Konstruktor in der Klasse Video benötigt, mit dem man ein Video ohne Meta-Informationen erzeugen kann.
 
 \subsection{MailService}
-Die Klasse hat eine Methode bekommen mit der sie e-mail Adressen auf korrekte Syntax prüfen kann.
+Die Klasse hat eine Methode bekommen, mit der sie E-Mail-Adressen auf korrekte Syntax prüfen kann.

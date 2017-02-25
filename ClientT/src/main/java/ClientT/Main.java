@@ -13,6 +13,7 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Form;
+import javax.ws.rs.core.Link;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.File;
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.LinkedList;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
@@ -43,6 +45,7 @@ public class Main
 
         //different requests here
         upload();
+
     }
 
     private static void setUp() {
@@ -138,9 +141,11 @@ public class Main
 
 
     private static void upload() {
-        File videoFile = new File("src" + File.separator + "main" + File.separator + "resources" + File.separator + "VIDEO_1487198226374.mp4");
-        File metadataFile = new File("src" + File.separator + "main" + File.separator + "resources" + File.separator + "META_1487198226374.json");
-        File keyFile = new File("src" + File.separator + "main" + File.separator + "resources" + File.separator + "KEY_1487198226374.key");
+        String vidName = "1487198226374";
+
+        File videoFile = new File("src" + File.separator + "main" + File.separator + "resources" + File.separator + "VIDEO_" + vidName + ".mp4");
+        File metadataFile = new File("src" + File.separator + "main" + File.separator + "resources" + File.separator + "META_" + vidName + ".json");
+        File keyFile = new File("src" + File.separator + "main" + File.separator + "resources" + File.separator + "KEY_" + vidName + ".key");
 
         Client client = ClientBuilder.newClient();
         WebTarget webTarget = client.target(HOST).path("videoUpload").register(MultiPartFeature.class);

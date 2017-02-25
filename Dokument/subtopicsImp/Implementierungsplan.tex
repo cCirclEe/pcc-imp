@@ -1,8 +1,10 @@
 \chapter{Implementierungsplan} \label{chap:Implementierungsplan}
 
 \section{Einleitung}
-Um eine schnelle und reibungslose Implementierung zu garantieren haben wir einen Plan erstellt, in dem wir festhalten, welches Modul wann implementiert wird. \par
+Um eine schnelle und reibungslose Implementierung zu garantieren haben wir einen Plan erstellt, in dem wir festhalten, welches Modul wann implementiert wird.\par
 Bei der Erstellung des Plans war unser zentrales Ziel eine hierarchische Implementierung zu erreichen. Das heißt, dass zunächst die Grundfunktionalität implementiert wird und danach schrittweise weitere, immer weniger essentielle Komponenten hinzugefügt werden. Dadurch wird gewährleistet, dass Probleme, die die Umsetzung der \textit{PrivacyCrashCam} als Ganzes gefährden frühzeitig erkannt und behandelt werden können.\par
+So wurden Funktionen, wie z.B. die VideoProcessingChain in dem Web-Dienst oder die Camera in der App zuerst geschrieben und unwichtigere Elemente wie z.B. die Datenschutzerklärung, oder die Bestätigungsmail beim Anmelden später implementiert. Dies erlaubte uns früh Probleme wie z.B. den Ringpuffer \eqref{Ringbuffer} zu erkennen und beseitigen und so eine reibungslose Kernfunktionalität zu gewährleisten. \par
+Ein Implementierungsplan erleichtert zudem die Koordination zwischen den Gruppenmitgliedern, da jeder weiß welche Module schon integriert werden können und bei welchen man beachten muss, dass sie noch implementiert und getestet werden.
 
 \newpage
 

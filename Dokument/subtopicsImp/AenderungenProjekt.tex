@@ -1,0 +1,24 @@
+\chapter{Änderungen (Projekt)} \label{chap:AenderungenProjekt}
+
+\section{App}
+
+\subsection{Mp4Parser}
+Um die einzelnen kurzen Videostücke bei der Persistierung zusammenzuschneiden verwenden wir die Bibliothek Mp4Parser.
+
+\section{Web-Dienst}
+\subsection{OpenCV}
+Die Anbindung von OpenCV über Maven erwies sich als schwierig, da OpenCV keine offizielle Maven-Schnittstelle anbietet. Dies führte dazu, dass wir OpenCV selbst in Maven integrieren mussten. Da jedoch die Integration von nativen Bibliotheken über Maven vermehrt zu Fehlern geführt hat, haben wir uns entschieden JavaCV von bytedeco zu verwenden. JavaCV bietet eine eigene mavenfähige Java-Schnittstelle zu OpenCV und verwaltet native Abhängigkeiten automatisch. Zudem wird zusätzlich FFMpeg verwaltet, das wir zur Bearbeitung von Mp4-Videos zusätzlich benötigten.
+
+\subsection{Xuggler}
+Um Metadaten zu Mp4-Videos auszulesen haben wir die Bibliothek Xuggler hinzugefügt. Xuggler bietet zudem viele Funktionalitäten die weitere Videomanipulationen ermöglichen, z.B. Resizing.
+
+\section{Web-Interface}
+\subsection{Commons-Mail}
+Um zu überprüfen, ob ein Nutzer bei der Registrierung eine korrekte E-Mail-Adresse angibt verwenden wir die Bibliothek commons.mail.
+
+\section{Allgemein}
+\subsection{Mocktio}
+Um das Testen zu vereinfachen verwenden wir zusätzlich zu JUnit auch Mockito und PowerMocktio. Insbesondere in der App ist dies notwendig, da Android verlangt für nicht Instrumentierte Tests alle Android Funktionalität zu mocken.
+
+\subsection{JSON}
+Um ein einheitliches Format zur Informationsübertragung zwischen den einzelnen Komponenten sicherzustellen verwenden wir JSON. Für unser Projekt haben wir uns für die JSON-Funktionalität von org.json entschieden.

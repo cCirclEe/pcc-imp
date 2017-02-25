@@ -1,0 +1,45 @@
+"Somit kann nach Ändern oder Löschen eines Accounts der Benutzer ausgeloggt wird." - Chris Imp-Dokument
+
+"You dont want to test his" - Josh Commit-Message
+
+"small changes", "small changes", "small changes", "small changes" - Fabi Commit-Messages
+
+"sometimes i feel stupid" - Josh Commit-Message
+
+"have a nice day" - Josh Commit-Message
+
+"fix mother of god problems" David Commit-Message
+
+"Srsly? :D" - Giorgio COmmit Message
+
+"aaaaand wrong again... saveInInternalStorage now true" - David Commit-Message
+
+"I am so bad with VCS." - Chris Commit-Message
+
+/* #############################################################################################
+
+                                                                                  XXXXXXX
+                                                                                XX       XX
+                                                                               XX         XX
+                                                                               XX         XX
+                                                                                 XX     XX
+                                    methods                                    XXXXXXXXXXXXX
+                                    User Data saved in Shared Preferences    XXX           XXX
+                                                                            XX               XX
+                                                                            X   X         X   X
+                                                                            X   X         X   X
+
+    ############################################################################################# */ - Giorgio Kommentar (100% space invaders)
+
+"i like trains" - Josh Commit-Message
+
+"@author The one and only G.I.Giorgio" - Fabi Kommentar
+
+"split the monster" - Chris Commit-Message
+
+"Er kam, sah und verbesserte Rechtschreibung", "Spelling, grammar and consistency we need my padawan.",
+"Out of bad jokes. Changed Spelling" - Josh Commit-Messages
+
+"fix the fucked up part" - Fabi Commit-Message
+
+"Rip glossary" - Josh Commit-Message
