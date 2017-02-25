@@ -2,8 +2,8 @@
 
 \section{Einleitung}
 Um eine schnelle und reibungslose Implementierung zu garantieren haben wir einen Plan erstellt, in dem wir festhalten, welches Modul wann implementiert wird.\par
-Bei der Erstellung des Plans war unser zentrales Ziel eine hierarchische Implementierung zu erreichen. Das heißt, dass zunächst die Grundfunktionalität implementiert wird und danach schrittweise weitere, immer weniger essentielle Komponenten hinzugefügt werden. Dadurch wird gewährleistet, dass Probleme, die die Umsetzung der \textit{PrivacyCrashCam} als Ganzes gefährden frühzeitig erkannt und behandelt werden können.\par
-So wurden Funktionen, wie z.B. die VideoProcessingChain in dem Web-Dienst oder die Camera in der App zuerst geschrieben und unwichtigere Elemente wie z.B. die Datenschutzerklärung, oder die Bestätigungsmail beim Anmelden später implementiert. Dies erlaubte uns früh Probleme wie z.B. den Ringpuffer \eqref{Ringbuffer} zu erkennen und beseitigen und so eine reibungslose Kernfunktionalität zu gewährleisten. \par
+Bei der Erstellung des Plans haben wir Module und Funktionen priorisiert um eine gestaffelte Implementierung zu realisieren. Das heißt, dass zunächst die Grundfunktionalität implementiert wird und danach schrittweise weitere, immer weniger essentielle Komponenten hinzugefügt werden. Dadurch wird gewährleistet, dass Probleme, die die Umsetzung der \textit{PrivacyCrashCam} als Ganzes gefährden, frühzeitig erkannt und behandelt werden können.\par
+So wurden Funktionen, wie z.B. die VideoProcessingChain in dem Web-Dienst oder die Camera in der App zuerst geschrieben und unwichtigere Elemente wie z.B. die Datenschutzerklärung, oder die Bestätigungsmail beim Anmelden später implementiert. Dies erlaubte uns früh Probleme wie z.B. den Ringpuffer \eqref{Ringbuffer} zu erkennen und zu beseitigen und so eine reibungslose Kernfunktionalität zu gewährleisten. \par
 Ein Implementierungsplan erleichtert zudem die Koordination zwischen den Gruppenmitgliedern, da jeder weiß welche Module schon integriert werden können und bei welchen man beachten muss, dass sie noch implementiert und getestet werden.
 
 \newpage
@@ -146,7 +146,7 @@ Durch bereits genannte Probleme mit der Umsetzung des Ringbuffers \eqref{Ringbuf
 Nicht alle Methoden des MemoryAccess-Moduls wurden direkt benötigt. Daher haben wir die Fertigstellung des Moduls verzögert, um zuerst den Persistor fertig stellen zu können.
 
 \item \label{ServerProxy} \textbf{ServerProxy} \hfill \\
-Da nach und nach die Funktionalität des Web-Interfaces und der App erweitert wurden, stellten sich auch immer wieder neue kleine Probleme mit dem ServerProxy heraus, wodurch immer wieder kleine Änderungen nötig wurden und die Fertigstellung verzögerten.
+Da nach und nach die Funktionalität des Web-Interfaces und der App erweitert wurden, stellten sich auch immer wieder neue kleine Probleme mit dem ServerProxy heraus, wodurch immer wieder kleine Änderungen nötig wurden die die Fertigstellung verzögerten.
 
 \item \textbf{Database} \hfill \\
 Weil die Implementierung des Passwordhashens eine Anpassung des DatabaseManagers erforderte, musste der eigentlich abgeschlossene Manager noch einmal aufgegriffen werden.

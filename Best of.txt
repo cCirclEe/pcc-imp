@@ -10,8 +10,6 @@
 
 "fix mother of god problems" David Commit-Message
 
-"Srsly? :D" - Giorgio COmmit Message
-
 "aaaaand wrong again... saveInInternalStorage now true" - David Commit-Message
 
 "I am so bad with VCS." - Chris Commit-Message
@@ -34,6 +32,7 @@
 "i like trains" - Josh Commit-Message
 
 "@author The one and only G.I.Giorgio" - Fabi Kommentar
+"Srsly? :D" - Giorgio Commit Message (in response to Fabi)
 
 "split the monster" - Chris Commit-Message
 
