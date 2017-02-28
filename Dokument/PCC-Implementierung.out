@@ -1,0 +1,45 @@
+\BOOKMARK [0][-]{chapter.1}{Einleitung}{}% 1
+\BOOKMARK [0][-]{chapter.2}{\304nderungen \(Code\)}{}% 2
+\BOOKMARK [1][-]{section.2.1}{App}{chapter.2}% 3
+\BOOKMARK [2][-]{subsection.2.1.1}{AsyncPersistor}{section.2.1}% 4
+\BOOKMARK [2][-]{subsection.2.1.2}{Encryptor}{section.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.1.3}{Ringbuffer}{section.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.1.4}{MemoryManager}{section.2.1}% 7
+\BOOKMARK [2][-]{subsection.2.1.5}{CameraHandler}{section.2.1}% 8
+\BOOKMARK [1][-]{section.2.2}{Web-Dienst}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.1}{ServerProxy}{section.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.2}{Main}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.3}{AccountManager}{section.2.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.4}{VideoManager}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.5}{DatabaseManager}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.6}{Account}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.7}{Metadata}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.8}{LocationConfig}{section.2.2}% 17
+\BOOKMARK [2][-]{subsection.2.2.9}{VideoProcessingChain}{section.2.2}% 18
+\BOOKMARK [2][-]{subsection.2.2.10}{VideoProcessing.Chain}{section.2.2}% 19
+\BOOKMARK [2][-]{subsection.2.2.11}{OpenCVAnonymizer}{section.2.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.12}{OpenCVFilter}{section.2.2}% 21
+\BOOKMARK [1][-]{section.2.3}{Interface}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.3.1}{Login}{section.2.3}% 23
+\BOOKMARK [2][-]{subsection.2.3.2}{AccountView}{section.2.3}% 24
+\BOOKMARK [2][-]{subsection.2.3.3}{AccountDataManager}{section.2.3}% 25
+\BOOKMARK [2][-]{subsection.2.3.4}{Download}{section.2.3}% 26
+\BOOKMARK [2][-]{subsection.2.3.5}{Account}{section.2.3}% 27
+\BOOKMARK [2][-]{subsection.2.3.6}{Video}{section.2.3}% 28
+\BOOKMARK [2][-]{subsection.2.3.7}{MailService}{section.2.3}% 29
+\BOOKMARK [0][-]{chapter.3}{\304nderungen \(Projekt\)}{}% 30
+\BOOKMARK [1][-]{section.3.1}{App}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.1.1}{Mp4Parser}{section.3.1}% 32
+\BOOKMARK [1][-]{section.3.2}{Web-Dienst}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.2.1}{OpenCV}{section.3.2}% 34
+\BOOKMARK [2][-]{subsection.3.2.2}{Xuggler}{section.3.2}% 35
+\BOOKMARK [1][-]{section.3.3}{Web-Interface}{chapter.3}% 36
+\BOOKMARK [2][-]{subsection.3.3.1}{Commons-Mail}{section.3.3}% 37
+\BOOKMARK [1][-]{section.3.4}{Allgemein}{chapter.3}% 38
+\BOOKMARK [2][-]{subsection.3.4.1}{Mocktio}{section.3.4}% 39
+\BOOKMARK [2][-]{subsection.3.4.2}{JSON}{section.3.4}% 40
+\BOOKMARK [0][-]{chapter.4}{Implementierungsplan}{}% 41
+\BOOKMARK [1][-]{section.4.1}{Einleitung}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.2}{Urspr\374nglicher Implementierungsplan}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.3}{Tats\344chlicher Implementierungsplan}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.4}{Gr\374nde f\374r die Unterschiede}{chapter.4}% 45

@@ -46,7 +46,9 @@ Damit der man der Account Klasse das Salt zum hashen mitgeben kann wurde die Fun
 Da Web-Dienst und Web-Interface zwei vollständig unabhängige Projekte sind ist eine Kommunikation über die Datencontainerklasse VideoInfo nicht direkt möglich. Um dennoch Informationen austauschen zu können wurde die Methode getVideoInfoList() so abgeändert, dass sie nun einen JSON-String erstellt, der versendet und auf dem Interface wieder ausgelesen werden kann.
 
 \subsection{DatabaseManager}
-Die Methode getMetaName() wurde hinzugefügt, da der Name der Metadaten gebraucht wird, jedoch nur die videoId als Informationsquelle da ist. Zudem musste die Methode getSalt() hinzugefügt werden, da am Anfang nicht klar war, dass der Salt in der Datenbank mitgespeichert werden muss. Zum Entschlüsseln des Passworts, z.B bei der Authentifizierung des Accounts, wird der Salt benötigt, um den Hash zum Vergleichen der Passwörter wiederherzustellen.
+Die Methode getMetaName() wurde hinzugefügt, da der Name gebraucht wird, um das File zu finden. \par
+
+Zudem musste die Methode getSalt() hinzugefügt werden, da am Anfang nicht klar war, dass der Salt in der Datenbank gespeichert werden muss. Zum Entschlüsseln des Passworts, z.B bei der Authentifizierung des Accounts, wird der Salt benötigt, um den Hash zum Vergleichen der Passwörter zu erstellen.
 
 \subsection{Account}
 Das lesen des Hash-Salt aus der Datenbank wird vom AccountManager geregelt, da die Account Klasse keinen Zugriff auf die Datenbank hat. Daher war es notwendig die Methode hashPassword() öffentlich zu machen.
